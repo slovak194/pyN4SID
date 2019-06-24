@@ -73,8 +73,13 @@ def blockHankel(Hleft,Hbot=None,blockHeight=1):
         Nc = int(Hbot.shape[1] / blockWidth)
         
         print(type(Nr))
+        print(Nr)
+        
         print(type(blockHeight))
+        print(blockHeight)
+        
         print(type(blockWidth))
+        print(blockWidth)
         
     LeftBlock = np.zeros((Nr, blockHeight, blockWidth))
     
