@@ -81,7 +81,7 @@ def blockHankel(Hleft,Hbot=None,blockHeight=1):
         print(type(blockWidth))
         print(blockWidth)
         
-    LeftBlock = np.zeros((Nr, blockHeight, blockWidth))
+    LeftBlock = np.zeros((int(Nr), blockHeight, blockWidth))
     
     for k in range(Nr):
         LeftBlock[k] = Hleft[k*blockHeight:(k+1)*blockHeight]
