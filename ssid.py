@@ -63,16 +63,20 @@ def blockHankel(Hleft,Hbot=None,blockHeight=1):
     Hbot is a matrix of dimensions blockHeight x (NumBlockColumns*blockWidth)
     """
     
-    blockWidth = Hleft.shape[1]
+    blockWidth = int(Hleft.shape[1])
     if Hbot is None:
         Nr = len(Hleft) / blockHeight
         Nc = Nr
     else:
-        blockHeight = len(Hbot)
+        blockHeight = int(len(Hbot))
         Nr = int(len(Hleft) / blockHeight)
         Nc = int(Hbot.shape[1] / blockWidth)
         
-    LeftBlock = np.zeros((Nr,int(blockHeight),int(blockWidth)))
+        print(type(Nr))
+        print(type(blockHeight))
+        print(type(blockWidth))
+        
+    LeftBlock = np.zeros((Nr, blockHeight, blockWidth))
     
     for k in range(Nr):
         LeftBlock[k] = Hleft[k*blockHeight:(k+1)*blockHeight]
