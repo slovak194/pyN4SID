@@ -39,8 +39,8 @@ def blockTranspose(M,blockHeight,blockWidth):
     Switches block indices without transposing the blocks
     """
     r,c = M.shape
-    Nr = r / blockHeight
-    Nc = c / blockWidth
+    Nr = r // blockHeight
+    Nc = c // blockWidth
     Mblock = np.zeros((Nr,Nc,blockHeight,blockWidth))
     for i in range(Nr):
         for j in range(Nc):
